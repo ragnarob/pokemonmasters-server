@@ -1,0 +1,30 @@
+[
+	{
+		"id": 1,
+		"name": "Luxray",
+		"types": ["Elecrtic"],
+		"availableMoves": [1, 2, 3, 15, 66, 68, 100, 110, 114, 117, 119],
+		"baseStats": {
+			"hp": 80,
+			"attack": 120,
+			"defense": 79,
+			"specialAttack": 95,
+			"specialDefense": 79,
+			"speed": 70
+		}
+	},
+	{
+		"id": 2,
+		"name": "Glaceon",
+		"types": ["Ice"],
+		"availableMoves": [12, 12, 33, 45, 66, 68, 100, 110, 114, 117, 119],
+		"baseStats": {
+			"hp": 65,
+			"attack": 60,
+			"defense": 110,
+			"specialAttack": 130,
+			"specialDefense": 95,
+			"speed": 65
+		}
+	}
+]

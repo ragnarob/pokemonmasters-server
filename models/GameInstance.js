@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-let Pokemon = require('./Pokemon')
 
 let gameInstanceSchema = new mongoose.Schema({
 	id: Schema.Types.ObjectId,

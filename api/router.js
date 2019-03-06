@@ -5,7 +5,7 @@ module.exports = class Router {
 
 		this.app = app
 		this.setupRoutes()
-		this.app.listen(8080)
+		this.app.listen(3000)
 	}
 
 	setupRoutes () {

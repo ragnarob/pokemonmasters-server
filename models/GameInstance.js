@@ -12,9 +12,9 @@ let gameInstanceSchema = new mongoose.Schema({
 		ready: Boolean,
 		message: String,
 		winner: String,
-		gameState: { // dict, {playerName: [Pokemon]}
+		gameState: { // dict, {playerName: [InGamePokemon]}
 			type: Map,
-			of: [{type: Schema.Types.ObjectId, ref: 'Pokemon'}]
+			of: [{type: Schema.Types.ObjectId, ref: 'InGamePokemon'}] // todo lage InGamePokemon-modellen
 		}
 	}
 })

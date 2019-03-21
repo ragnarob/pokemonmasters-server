@@ -1,4 +1,4 @@
-let MoveDex = {
+module.exports = {
     "hyperbeam": {
 		num: 63,
 		accuracy: 90,

@@ -2,7 +2,7 @@ let GameInstance = require('../models/GameInstance')
 
 module.exports = class Router {
 	constructor (app, databaseConnection) {
-		this.pokemon = require('../static/pokemon.json')
+		this.pokemon = require('../static/pokemon')
 		this.moves = require('../static/moves')
 
 		this.app = app

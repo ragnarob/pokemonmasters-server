@@ -21,16 +21,16 @@ module.exports = class Router {
 	}
 
 	createGame (req, res) {
-		// todo stuff
+		res.json('todo')
 	}
 
 	addPlayerToGame (req, res) {
 		let [playerName, gameCode] = [req.body.playerName, req.body.gameCode]
-		// todo stuff
+		res.json('todo')
 	}
 
 	getGameStatus (req, res) {
 		let gameToken = req.body.gameToken
-		// todo stuff
+		res.json('todo')
 	}
 }

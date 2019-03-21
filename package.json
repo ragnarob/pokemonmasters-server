@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ragnarob/pokemonmasters.git"
+    "url": "git+https://github.com/ragnarob/pokemonmasters-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ragnarob/pokemonmasters/issues"
+    "url": "https://github.com/ragnarob/pokemonmasters-server/issues"
   },
-  "homepage": "https://github.com/ragnarob/pokemonmasters#readme",
+  "homepage": "https://github.com/ragnarob/pokemonmasters-server#readme",
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.17"

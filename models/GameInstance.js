@@ -12,12 +12,12 @@ let gameInstanceSchema = new mongoose.Schema({
 	state: { // usikker på om dette blir rett. Map istedenfor??
 		ready: Boolean,
 		message: String,
-		hasWinner: Boolean,
-		winner: String,
-		gameState: { // dict, {playerName: [InGamePokemon]}
-			type: Map,
-			of: [{type: Schema.Types.ObjectId, ref: 'InGamePokemon'}] // todo lage InGamePokemon-modellen
-		}
+		gameState: [
+			{
+				playerName: String,
+				pokemon: [{type: Schema.Types.ObjectId, ref: 'InGamePokemon'}]
+			}
+		]
 	}
 })
 
@@ -42,6 +42,14 @@ gameInstanceSchema.methods.generateGameToken = function () {
 		token += possible.charAt(Math.floor(Math.random() * possible.length))
 	}
   this.gameToken = token
+}
+
+gameInstanceSchema.methods.addPokemonToTeamWithPlayerName = function (playerName, pokemon) {
+	for (let stateObj of this.state.gameState) {
+		if (stateObj.playerName === playerName) {
+			stateObj.pokemon.push(pokemon._id)
+		}
+	}
 }
 
 

@@ -1,10 +1,13 @@
+let GameInstance = require('../models/GameInstance')
+
 module.exports = class Router {
-	constructor (app) {
+	constructor (app, databaseConnection) {
 		this.pokemon = require('../static/pokemon.json')
 		this.moves = require('../static/moves')
 
 		this.app = app
 		this.setupRoutes()
+
 		this.app.listen(3000)
 	}
 
@@ -20,8 +23,21 @@ module.exports = class Router {
 		res.json('Hello world')
 	}
 
-	createGame (req, res) {
-		res.json('todo')
+	async createGame (req, res) {
+		let playerName = req.body.playerName
+		let newGameInstance = new GameInstance({
+			playerNames: [playerName]
+		})
+		newGameInstance.generateGameCode()
+		newGameInstance.generateGameToken()
+
+		try {
+			await newGameInstance.save()
+			res.json({gameCode: newGameInstance.gameCode, gameToken: newGameInstance.gameToken})
+		}
+		catch (err) {
+			res.json({error: 'Error creating game instance'})
+		}
 	}
 
 	addPlayerToGame (req, res) {
@@ -29,8 +45,10 @@ module.exports = class Router {
 		res.json('todo')
 	}
 
-	getGameStatus (req, res) {
+	async getGameStatus (req, res) {
+		// let gameToken = 'TeRfZu2ANmzr4wQueVmJetI0H'    // For testing
 		let gameToken = req.body.gameToken
-		res.json('todo')
+		let gameInstance = await GameInstance.findOne({gameToken: gameToken})
+		if (gameInstance) { res.json({gameStage: gameInstance ? gameInstance.gameStage : -1}) }
 	}
 }

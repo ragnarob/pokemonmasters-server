@@ -1,16 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+let InGamePokemon = require('./InGamePokemon')
 
 let gameInstanceSchema = new mongoose.Schema({
-	id: Schema.Types.ObjectId,
 	gameCode: String,
 	gameToken: String,
 	playerNames: [String],
 	gameStage: {type: Number, default: 0},
-	gameFinished: Boolean,
+	gameFinished: {type: Boolean, default: false},
+	winner: {type: String, default: null},
 	state: { // usikker på om dette blir rett. Map istedenfor??
 		ready: Boolean,
 		message: String,
+		hasWinner: Boolean,
 		winner: String,
 		gameState: { // dict, {playerName: [InGamePokemon]}
 			type: Map,
@@ -20,14 +22,8 @@ let gameInstanceSchema = new mongoose.Schema({
 })
 
 gameInstanceSchema.methods.addPlayer = function (playerName) {
-	if (this.playerNames.length === 0) {
-		this.playerNames = [playerName]
-		this.state.gameStage = 0 //todo mongoose default?
-	}
-	else {
-		this.playerNames.push(playerName)
-		this.state.gameStage = 1
-	}
+	this.playerNames.push(playerName)
+	this.state.gameStage = 1
 }
 
 gameInstanceSchema.methods.generateGameCode = function () {
@@ -36,7 +32,7 @@ gameInstanceSchema.methods.generateGameCode = function () {
   for (let i=0; i<5; i++) {
 		code += possible.charAt(Math.floor(Math.random() * possible.length))
 	}
-  this.gameCode = code
+  this.gameCode = code.toUpperCase()
 }
 
 gameInstanceSchema.methods.generateGameToken = function () {

@@ -5,6 +5,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 45, atk: 49, def: 49, spa: 65, spd: 65, spe: 45},
 		abilities: {0: "Overgrow", H: "Chlorophyll"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	ivysaur: {
 		num: 2,
@@ -12,6 +13,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 60, atk: 62, def: 63, spa: 80, spd: 80, spe: 60},
 		abilities: {0: "Overgrow", H: "Chlorophyll"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	venusaur: {
 		num: 3,
@@ -19,6 +21,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 80, atk: 82, def: 83, spa: 100, spd: 100, spe: 80},
 		abilities: {0: "Overgrow", H: "Chlorophyll"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	charmander: {
 		num: 4,
@@ -26,6 +29,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 39, atk: 52, def: 43, spa: 60, spd: 50, spe: 65},
 		abilities: {0: "Blaze", H: "Solar Power"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	charmeleon: {
 		num: 5,
@@ -33,6 +37,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 58, atk: 64, def: 58, spa: 80, spd: 65, spe: 80},
 		abilities: {0: "Blaze", H: "Solar Power"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	charizard: {
 		num: 6,
@@ -40,6 +45,7 @@ module.exports = {
 		types: ["Fire", "Flying"],
 		baseStats: {hp: 78, atk: 84, def: 78, spa: 109, spd: 85, spe: 100},
 		abilities: {0: "Blaze", H: "Solar Power"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	squirtle: {
 		num: 7,
@@ -47,6 +53,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 44, atk: 48, def: 65, spa: 50, spd: 64, spe: 43},
 		abilities: {0: "Torrent", H: "Rain Dish"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	wartortle: {
 		num: 8,
@@ -54,6 +61,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 59, atk: 63, def: 80, spa: 65, spd: 80, spe: 58},
 		abilities: {0: "Torrent", H: "Rain Dish"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	blastoise: {
 		num: 9,
@@ -61,6 +69,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 79, atk: 83, def: 100, spa: 85, spd: 105, spe: 78},
 		abilities: {0: "Torrent", H: "Rain Dish"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	caterpie: {
 		num: 10,
@@ -68,6 +77,7 @@ module.exports = {
 		types: ["Bug"],
 		baseStats: {hp: 45, atk: 30, def: 35, spa: 20, spd: 20, spe: 45},
 		abilities: {0: "Shield Dust", H: "Run Away"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	metapod: {
 		num: 11,
@@ -75,6 +85,7 @@ module.exports = {
 		types: ["Bug"],
 		baseStats: {hp: 50, atk: 20, def: 55, spa: 25, spd: 25, spe: 30},
 		abilities: {0: "Shed Skin"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	butterfree: {
 		num: 12,
@@ -82,6 +93,7 @@ module.exports = {
 		types: ["Bug", "Flying"],
 		baseStats: {hp: 60, atk: 45, def: 50, spa: 90, spd: 80, spe: 70},
 		abilities: {0: "Compound Eyes", H: "Tinted Lens"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	weedle: {
 		num: 13,
@@ -89,6 +101,7 @@ module.exports = {
 		types: ["Bug", "Poison"],
 		baseStats: {hp: 40, atk: 35, def: 30, spa: 20, spd: 20, spe: 50},
 		abilities: {0: "Shield Dust", H: "Run Away"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	kakuna: {
 		num: 14,
@@ -96,6 +109,7 @@ module.exports = {
 		types: ["Bug", "Poison"],
 		baseStats: {hp: 45, atk: 25, def: 50, spa: 25, spd: 25, spe: 35},
 		abilities: {0: "Shed Skin"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	beedrill: {
 		num: 15,
@@ -103,6 +117,7 @@ module.exports = {
 		types: ["Bug", "Poison"],
 		baseStats: {hp: 65, atk: 90, def: 40, spa: 45, spd: 80, spe: 75},
 		abilities: {0: "Swarm", H: "Sniper"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	pidgey:{
 		num: 16,
@@ -110,6 +125,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 40, atk: 45, def: 40, spa: 35, spd: 35, spe: 56},
 		abilities: {0: "Keen Eye", 1: "Tangled Feet", H: "Big Pecks"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	pidgeotto: {
 		num: 17,
@@ -117,6 +133,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 63, atk: 60, def: 55, spa: 50, spd: 50, spe: 71},
 		abilities: {0: "Keen Eye", 1: "Tangled Feet", H: "Big Pecks"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	pidgeot: {
 		num: 18,
@@ -124,6 +141,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101},
 		abilities: {0: "Keen Eye", 1: "Tangled Feet", H: "Big Pecks"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	rattatta: {	
 		num: 19,
@@ -131,6 +149,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 30, atk: 56, def: 35, spa: 25, spd: 35, spe: 72},
 		abilities: {0: "Run Away", 1: "Guts", H: "Hustle"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	raticate: {
 		num: 20,
@@ -138,6 +157,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 55, atk: 81, def: 60, spa: 50, spd: 70, spe: 97},
 		abilities: {0: "Run Away", 1: "Guts", H: "Hustle"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	spearow: {	
 		num: 21,
@@ -145,6 +165,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 40, atk: 60, def: 30, spa: 31, spd: 31, spe: 70},
 		abilities: {0: "Keen Eye", H: "Sniper"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	fearow: {
 		num: 22,
@@ -152,6 +173,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 65, atk: 90, def: 65, spa: 61, spd: 61, spe: 100},
 		abilities: {0: "Keen Eye", H: "Sniper"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	ekans: {
 		num: 23,
@@ -159,6 +181,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 35, atk: 60, def: 44, spa: 40, spd: 54, spe: 55},
 		abilities: {0: "Intimidate", 1: "Shed Skin", H: "Unnerve"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	arbok:{	
 		num: 24,
@@ -166,6 +189,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 60, atk: 95, def: 69, spa: 65, spd: 79, spe: 80},
 		abilities: {0: "Intimidate", 1: "Shed Skin", H: "Unnerve"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	pikachu: {
 		num: 25,
@@ -173,6 +197,7 @@ module.exports = {
 		types: ["Electric"],
 		baseStats: {hp: 35, atk: 55, def: 40, spa: 50, spd: 50, spe: 90},
 		abilities: {0: "Static", H: "Lightning Rod"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	raichu: {	 
 		num: 26,
@@ -180,6 +205,7 @@ module.exports = {
 		types: ["Electric"],
 		baseStats: {hp: 60, atk: 90, def: 55, spa: 90, spd: 80, spe: 110},
 		abilities: {0: "Static", H: "Lightning Rod"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	sandshrew: {
 		num: 27,
@@ -187,6 +213,7 @@ module.exports = {
 		types: ["Ground"],
 		baseStats: {hp: 50, atk: 75, def: 85, spa: 20, spd: 30, spe: 40},
 		abilities: {0: "Sand Veil", H: "Sand Rush"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	sandslash: {
 		num: 28,
@@ -194,6 +221,7 @@ module.exports = {
 		types: ["Ground"],
 		baseStats: {hp: 75, atk: 100, def: 110, spa: 45, spd: 55, spe: 65},
 		abilities: {0: "Sand Veil", H: "Sand Rush"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	nidoranf: {
 		num: 29,
@@ -201,12 +229,14 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 55, atk: 47, def: 52, spa: 40, spd: 40, spe: 41},
 		abilities: {0: "Poison Point", 1: "Rivalry", H: "Hustle"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	nidorina: {
 		num: 30,
 		species: "Nidorina",
 		types: ["Poison"],
 		baseStats: {hp: 70, atk: 62, def: 67, spa: 55, spd: 55, spe: 56},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	nidoqueen: {
 		num: 31,
@@ -214,6 +244,7 @@ module.exports = {
 		types: ["Poison", "Ground"],
 		baseStats: {hp: 90, atk: 92, def: 87, spa: 75, spd: 85, spe: 76},
 		abilities: {0: "Poison Point", 1: "Rivalry", H: "Sheer Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	nidoranm: {
 		num: 32,
@@ -221,6 +252,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 46, atk: 57, def: 40, spa: 40, spd: 40, spe: 50},
 		abilities: {0: "Poison Point", 1: "Rivalry", H: "Hustle"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	nidorino: {
 		num: 33,
@@ -228,6 +260,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 61, atk: 72, def: 57, spa: 55, spd: 55, spe: 65},
 		abilities: {0: "Poison Point", 1: "Rivalry", H: "Hustle"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	nidoking: {
 		num: 34,
@@ -235,6 +268,7 @@ module.exports = {
 		types: ["Poison", "Ground"],
 		baseStats: {hp: 81, atk: 102, def: 77, spa: 85, spd: 75, spe: 85},
 		abilities: {0: "Poison Point", 1: "Rivalry", H: "Sheer Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	clefairy: {
 		num: 35,
@@ -242,6 +276,7 @@ module.exports = {
 		types: ["Fairy"],
 		baseStats: {hp: 70, atk: 45, def: 48, spa: 60, spd: 65, spe: 35},
 		abilities: {0: "Cute Charm", 1: "Magic Guard", H: "Friend Guard"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	clefable: {
 		num: 36,
@@ -249,6 +284,7 @@ module.exports = {
 		types: ["Fairy"],
 		baseStats: {hp: 95, atk: 70, def: 73, spa: 95, spd: 90, spe: 60},
 		abilities: {0: "Cute Charm", 1: "Magic Guard", H: "Unaware"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	vulpix: {
 		num: 37,
@@ -256,6 +292,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 38, atk: 41, def: 40, spa: 50, spd: 65, spe: 65},
 		abilities: {0: "Flash Fire", H: "Drought"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	ninetales: {
 		num: 38,
@@ -263,6 +300,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 73, atk: 76, def: 75, spa: 81, spd: 100, spe: 100},
 		abilities: {0: "Flash Fire", H: "Drought"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	jigglypuff: {
 		num: 39,
@@ -270,6 +308,7 @@ module.exports = {
 		types: ["Normal", "Fairy"],
 		baseStats: {hp: 115, atk: 45, def: 20, spa: 45, spd: 25, spe: 20},
 		abilities: {0: "Cute Charm", 1: "Competitive", H: "Friend Guard"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	wigglytuff: {
 		num: 40,
@@ -277,6 +316,7 @@ module.exports = {
 		types: ["Normal", "Fairy"],
 		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 50, spe: 45},
 		abilities: {0: "Cute Charm", 1: "Competitive", H: "Frisk"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	zubat: {
 		num: 41,
@@ -284,12 +324,15 @@ module.exports = {
 		types: ["Poison", "Flying"],
 		baseStats: {hp: 40, atk: 45, def: 35, spa: 30, spd: 40, spe: 55},
 		abilities: {0: "Inner Focus", H: "Infiltrator"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
+	},
 	golbat: {
 		num: 42,
 		species: "Golbat",
 		types: ["Poison", "Flying"],
 		baseStats: {hp: 75, atk: 80, def: 70, spa: 65, spd: 75, spe: 90},
 		abilities: {0: "Inner Focus", H: "Infiltrator"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	oddish: {
 		num: 43,
@@ -297,6 +340,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 45, atk: 50, def: 55, spa: 75, spd: 65, spe: 30},
 		abilities: {0: "Chlorophyll", H: "Run Away"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	gloom: {
 		num: 44,
@@ -304,6 +348,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 60, atk: 65, def: 70, spa: 85, spd: 75, spe: 40},
 		abilities: {0: "Chlorophyll", H: "Stench"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	vileplume: {
 		num: 45,
@@ -311,6 +356,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 75, atk: 80, def: 85, spa: 110, spd: 90, spe: 50},
 		abilities: {0: "Chlorophyll", H: "Effect Spore"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	paras: {
 		num: 46,
@@ -318,6 +364,7 @@ module.exports = {
 		types: ["Bug", "Grass"],
 		baseStats: {hp: 35, atk: 70, def: 55, spa: 45, spd: 55, spe: 25},
 		abilities: {0: "Effect Spore", 1: "Dry Skin", H: "Damp"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	parasect: {
 		num: 47,
@@ -325,6 +372,7 @@ module.exports = {
 		types: ["Bug", "Grass"],
 		baseStats: {hp: 60, atk: 95, def: 80, spa: 60, spd: 80, spe: 30},
 		abilities: {0: "Effect Spore", 1: "Dry Skin", H: "Damp"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	venonat: {
 		num: 48,
@@ -332,6 +380,7 @@ module.exports = {
 		types: ["Bug", "Poison"],
 		baseStats: {hp: 60, atk: 55, def: 50, spa: 40, spd: 55, spe: 45},
 		abilities: {0: "Compound Eyes", 1: "Tinted Lens", H: "Run Away"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	venomoth: {
 		num: 49,
@@ -339,6 +388,7 @@ module.exports = {
 		types: ["Bug", "Poison"],
 		baseStats: {hp: 70, atk: 65, def: 60, spa: 90, spd: 75, spe: 90},
 		abilities: {0: "Shield Dust", 1: "Tinted Lens", H: "Wonder Skin"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	diglett: {
 		num: 50,
@@ -346,6 +396,7 @@ module.exports = {
 		types: ["Ground"],
 		baseStats: {hp: 10, atk: 55, def: 25, spa: 35, spd: 45, spe: 95},
 		abilities: {0: "Sand Veil", 1: "Arena Trap", H: "Sand Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	dugtrio: {
 		num: 51,
@@ -353,6 +404,7 @@ module.exports = {
 		types: ["Ground"],
 		baseStats: {hp: 35, atk: 100, def: 50, spa: 50, spd: 70, spe: 120},
 		abilities: {0: "Sand Veil", 1: "Arena Trap", H: "Sand Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	meowth: {
 		num: 52,
@@ -360,6 +412,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 40, atk: 45, def: 35, spa: 40, spd: 40, spe: 90},
 		abilities: {0: "Pickup", 1: "Technician", H: "Unnerve"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	persian: {
 		num: 53,
@@ -367,6 +420,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 65, atk: 70, def: 60, spa: 65, spd: 65, spe: 115},
 		abilities: {0: "Limber", 1: "Technician", H: "Unnerve"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	psyduck: {
 		num: 54,
@@ -374,6 +428,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 50, atk: 52, def: 48, spa: 65, spd: 50, spe: 55},
 		abilities: {0: "Damp", 1: "Cloud Nine", H: "Swift Swim"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	golduck: {
 		num: 55,
@@ -381,6 +436,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 80, atk: 82, def: 78, spa: 95, spd: 80, spe: 85},
 		abilities: {0: "Damp", 1: "Cloud Nine", H: "Swift Swim"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	mankey: {
 		num: 56,
@@ -388,6 +444,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 40, atk: 80, def: 35, spa: 35, spd: 45, spe: 70},
 		abilities: {0: "Vital Spirit", 1: "Anger Point", H: "Defiant"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	primeape: {
 		num: 57,
@@ -395,6 +452,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 65, atk: 105, def: 60, spa: 60, spd: 70, spe: 95},
 		abilities: {0: "Vital Spirit", 1: "Anger Point", H: "Defiant"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	growlithe: {
 		num: 58,
@@ -402,6 +460,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 55, atk: 70, def: 45, spa: 70, spd: 50, spe: 60},
 		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Justified"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	arcanine: {
 		num: 59,
@@ -409,6 +468,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 90, atk: 110, def: 80, spa: 100, spd: 80, spe: 95},
 		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Justified"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	poliwag: {
 		num: 60,
@@ -416,6 +476,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 40, atk: 50, def: 40, spa: 40, spd: 40, spe: 90},
 		abilities: {0: "Water Absorb", 1: "Damp", H: "Swift Swim"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	poliwhirl: {
 		num: 61,
@@ -423,6 +484,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 65, atk: 65, def: 65, spa: 50, spd: 50, spe: 90},
 		abilities: {0: "Water Absorb", 1: "Damp", H: "Swift Swim"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	poliwrath: {
 		num: 62,
@@ -430,6 +492,7 @@ module.exports = {
 		types: ["Water", "Fighting"],
 		baseStats: {hp: 90, atk: 95, def: 95, spa: 70, spd: 90, spe: 70},
 		abilities: {0: "Water Absorb", 1: "Damp", H: "Swift Swim"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	abra: {
 		num: 63,
@@ -437,6 +500,7 @@ module.exports = {
 		types: ["Psychic"],
 		baseStats: {hp: 25, atk: 20, def: 15, spa: 105, spd: 55, spe: 90},
 		abilities: {0: "Synchronize", 1: "Inner Focus", H: "Magic Guard"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	kadabra: {
 		num: 64,
@@ -444,6 +508,7 @@ module.exports = {
 		types: ["Psychic"],
 		baseStats: {hp: 40, atk: 35, def: 30, spa: 120, spd: 70, spe: 105},
 		abilities: {0: "Synchronize", 1: "Inner Focus", H: "Magic Guard"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	alakazam: {
 		num: 65,
@@ -451,6 +516,7 @@ module.exports = {
 		types: ["Psychic"],
 		baseStats: {hp: 55, atk: 50, def: 45, spa: 135, spd: 95, spe: 120},
 		abilities: {0: "Synchronize", 1: "Inner Focus", H: "Magic Guard"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	machop: {
 		num: 66,
@@ -458,6 +524,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 70, atk: 80, def: 50, spa: 35, spd: 35, spe: 35},
 		abilities: {0: "Guts", 1: "No Guard", H: "Steadfast"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	machoke: {
 		num: 67,
@@ -465,6 +532,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 80, atk: 100, def: 70, spa: 50, spd: 60, spe: 45},
 		abilities: {0: "Guts", 1: "No Guard", H: "Steadfast"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	machamp: {
 		num: 68,
@@ -472,6 +540,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 90, atk: 130, def: 80, spa: 65, spd: 85, spe: 55},
 		abilities: {0: "Guts", 1: "No Guard", H: "Steadfast"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	bellsprout: {
 		num: 69,
@@ -479,6 +548,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 50, atk: 75, def: 35, spa: 70, spd: 30, spe: 40},
 		abilities: {0: "Chlorophyll", H: "Gluttony"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	weepinbell: {
 		num: 70,
@@ -486,6 +556,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 65, atk: 90, def: 50, spa: 85, spd: 45, spe: 55},
 		abilities: {0: "Chlorophyll", H: "Gluttony"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	victreebel: {
 		num: 71,
@@ -493,6 +564,7 @@ module.exports = {
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 80, atk: 105, def: 65, spa: 100, spd: 70, spe: 70},
 		abilities: {0: "Chlorophyll", H: "Gluttony"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	tentacool: {
 		num: 72,
@@ -500,6 +572,7 @@ module.exports = {
 		types: ["Water", "Poison"],
 		baseStats: {hp: 40, atk: 40, def: 35, spa: 50, spd: 100, spe: 70},
 		abilities: {0: "Clear Body", 1: "Liquid Ooze", H: "Rain Dish"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	tentacruel: {
 		num: 73,
@@ -507,6 +580,7 @@ module.exports = {
 		types: ["Water", "Poison"],
 		baseStats: {hp: 80, atk: 70, def: 65, spa: 80, spd: 120, spe: 100},
 		abilities: {0: "Clear Body", 1: "Liquid Ooze", H: "Rain Dish"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	geodude: {
 		num: 74,
@@ -514,6 +588,7 @@ module.exports = {
 		types: ["Rock", "Ground"],
 		baseStats: {hp: 40, atk: 80, def: 100, spa: 30, spd: 30, spe: 20},
 		abilities: {0: "Rock Head", 1: "Sturdy", H: "Sand Veil"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	graveler: {
 		num: 75,
@@ -521,6 +596,7 @@ module.exports = {
 		types: ["Rock", "Ground"],
 		baseStats: {hp: 55, atk: 95, def: 115, spa: 45, spd: 45, spe: 35},
 		abilities: {0: "Rock Head", 1: "Sturdy", H: "Sand Veil"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	golem: {
 		num: 76,
@@ -528,6 +604,7 @@ module.exports = {
 		types: ["Rock", "Ground"],
 		baseStats: {hp: 80, atk: 120, def: 130, spa: 55, spd: 65, spe: 45},
 		abilities: {0: "Rock Head", 1: "Sturdy", H: "Sand Veil"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	ponyta: {
 		num: 77,
@@ -535,6 +612,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 50, atk: 85, def: 55, spa: 65, spd: 65, spe: 90},
 		abilities: {0: "Run Away", 1: "Flash Fire", H: "Flame Body"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	rapidash: {
 		num: 78,
@@ -542,6 +620,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 65, atk: 100, def: 70, spa: 80, spd: 80, spe: 105},
 		abilities: {0: "Run Away", 1: "Flash Fire", H: "Flame Body"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	slowpoke: {
 		num: 79,
@@ -549,6 +628,7 @@ module.exports = {
 		types: ["Water", "Psychic"],
 		baseStats: {hp: 90, atk: 65, def: 65, spa: 40, spd: 40, spe: 15},
 		abilities: {0: "Oblivious", 1: "Own Tempo", H: "Regenerator"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	slowbro: {
 		num: 80,
@@ -556,6 +636,7 @@ module.exports = {
 		types: ["Water", "Psychic"],
 		baseStats: {hp: 95, atk: 75, def: 110, spa: 100, spd: 80, spe: 30},
 		abilities: {0: "Oblivious", 1: "Own Tempo", H: "Regenerator"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	magnemite: {	
 		num: 81,
@@ -564,6 +645,7 @@ module.exports = {
 		
 		baseStats: {hp: 25, atk: 35, def: 70, spa: 95, spd: 55, spe: 45},
 		abilities: {0: "Magnet Pull", 1: "Sturdy", H: "Analytic"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	magneton: {
 		num: 82,
@@ -572,6 +654,7 @@ module.exports = {
 		
 		baseStats: {hp: 50, atk: 60, def: 95, spa: 120, spd: 70, spe: 70},
 		abilities: {0: "Magnet Pull", 1: "Sturdy", H: "Analytic"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	farfetchd: {
 		num: 83,
@@ -579,6 +662,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 52, atk: 90, def: 55, spa: 58, spd: 62, spe: 60},
 		abilities: {0: "Keen Eye", 1: "Inner Focus", H: "Defiant"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	doduo: {
 		num: 84,
@@ -586,6 +670,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 35, atk: 85, def: 45, spa: 35, spd: 35, spe: 75},
 		abilities: {0: "Run Away", 1: "Early Bird", H: "Tangled Feet"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	dodrio: {
 		num: 85,
@@ -593,6 +678,7 @@ module.exports = {
 		types: ["Normal", "Flying"],
 		baseStats: {hp: 60, atk: 110, def: 70, spa: 60, spd: 60, spe: 110},
 		abilities: {0: "Run Away", 1: "Early Bird", H: "Tangled Feet"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	seel: {
 		num: 86,
@@ -600,6 +686,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 65, atk: 45, def: 55, spa: 45, spd: 70, spe: 45},
 		abilities: {0: "Thick Fat", 1: "Hydration", H: "Ice Body"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	dewgong: {
 		num: 87,
@@ -607,6 +694,7 @@ module.exports = {
 		types: ["Water", "Ice"],
 		baseStats: {hp: 90, atk: 70, def: 80, spa: 70, spd: 95, spe: 70},
 		abilities: {0: "Thick Fat", 1: "Hydration", H: "Ice Body"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	grimer: {
 		num: 88,
@@ -614,6 +702,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 80, atk: 80, def: 50, spa: 40, spd: 50, spe: 25},
 		abilities: {0: "Stench", 1: "Sticky Hold", H: "Poison Touch"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	muk: {
 		num: 89,
@@ -621,6 +710,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 105, atk: 105, def: 75, spa: 65, spd: 100, spe: 50},
 		abilities: {0: "Stench", 1: "Sticky Hold", H: "Poison Touch"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	shellder: {
 		num: 90,
@@ -628,6 +718,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 30, atk: 65, def: 100, spa: 45, spd: 25, spe: 40},
 		abilities: {0: "Shell Armor", 1: "Skill Link", H: "Overcoat"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	cloyster: {
 		num: 91,
@@ -635,6 +726,7 @@ module.exports = {
 		types: ["Water", "Ice"],
 		baseStats: {hp: 50, atk: 95, def: 180, spa: 85, spd: 45, spe: 70},
 		abilities: {0: "Shell Armor", 1: "Skill Link", H: "Overcoat"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	gastly: {
 		num: 92,
@@ -642,6 +734,7 @@ module.exports = {
 		types: ["Ghost", "Poison"],
 		baseStats: {hp: 30, atk: 35, def: 30, spa: 100, spd: 35, spe: 80},
 		abilities: {0: "Levitate"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	haunter: {
 		num: 93,
@@ -649,6 +742,7 @@ module.exports = {
 		types: ["Ghost", "Poison"],
 		baseStats: {hp: 45, atk: 50, def: 45, spa: 115, spd: 55, spe: 95},
 		abilities: {0: "Levitate"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	gengar: {
 		num: 94,
@@ -656,6 +750,7 @@ module.exports = {
 		types: ["Ghost", "Poison"],
 		baseStats: {hp: 60, atk: 65, def: 60, spa: 130, spd: 75, spe: 110},
 		abilities: {0: "Cursed Body"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	onix: {
 		num: 95,
@@ -663,6 +758,7 @@ module.exports = {
 		types: ["Rock", "Ground"],
 		baseStats: {hp: 35, atk: 45, def: 160, spa: 30, spd: 45, spe: 70},
 		abilities: {0: "Rock Head", 1: "Sturdy", H: "Weak Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	drowzee: {
 		num: 96,
@@ -670,6 +766,7 @@ module.exports = {
 		types: ["Psychic"],
 		baseStats: {hp: 60, atk: 48, def: 45, spa: 43, spd: 90, spe: 42},
 		abilities: {0: "Insomnia", 1: "Forewarn", H: "Inner Focus"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	hypno: {
 		num: 97,
@@ -677,6 +774,7 @@ module.exports = {
 		types: ["Psychic"],
 		baseStats: {hp: 85, atk: 73, def: 70, spa: 73, spd: 115, spe: 67},
 		abilities: {0: "Insomnia", 1: "Forewarn", H: "Inner Focus"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	krabby: {
 		num: 98,
@@ -684,6 +782,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 30, atk: 105, def: 90, spa: 25, spd: 25, spe: 50},
 		abilities: {0: "Hyper Cutter", 1: "Shell Armor", H: "Sheer Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	kingler: {
 		num: 99,
@@ -691,6 +790,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 55, atk: 130, def: 115, spa: 50, spd: 50, spe: 75},
 		abilities: {0: "Hyper Cutter", 1: "Shell Armor", H: "Sheer Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	voltorb: {
 		num: 100,
@@ -698,6 +798,7 @@ module.exports = {
 		types: ["Electric"],
 		baseStats: {hp: 40, atk: 30, def: 50, spa: 55, spd: 55, spe: 100},
 		abilities: {0: "Soundproof", 1: "Static", H: "Aftermath"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	electrode: {
 		num: 101,
@@ -705,6 +806,7 @@ module.exports = {
 		types: ["Electric"],
 		baseStats: {hp: 60, atk: 50, def: 70, spa: 80, spd: 80, spe: 150},
 		abilities: {0: "Soundproof", 1: "Static", H: "Aftermath"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	exeggcute: {
 		num: 102,
@@ -712,6 +814,7 @@ module.exports = {
 		types: ["Grass", "Psychic"],
 		baseStats: {hp: 60, atk: 40, def: 80, spa: 60, spd: 45, spe: 40},
 		abilities: {0: "Chlorophyll", H: "Harvest"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	exeggutor: {
 		num: 103,
@@ -719,6 +822,7 @@ module.exports = {
 		types: ["Grass", "Psychic"],
 		baseStats: {hp: 95, atk: 95, def: 85, spa: 125, spd: 75, spe: 55},
 		abilities: {0: "Chlorophyll", H: "Harvest"},	
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	cubone: {
 		num: 104,
@@ -726,6 +830,7 @@ module.exports = {
 		types: ["Ground"],
 		baseStats: {hp: 50, atk: 50, def: 95, spa: 40, spd: 50, spe: 35},
 		abilities: {0: "Rock Head", 1: "Lightning Rod", H: "Battle Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	marowak: {
 		num: 105,
@@ -733,6 +838,7 @@ module.exports = {
 		types: ["Ground"],
 		baseStats: {hp: 60, atk: 80, def: 110, spa: 50, spd: 80, spe: 45},
 		abilities: {0: "Rock Head", 1: "Lightning Rod", H: "Battle Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	hitmonlee: {
 		num: 106,
@@ -740,6 +846,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 50, atk: 120, def: 53, spa: 35, spd: 110, spe: 87},
 		abilities: {0: "Limber", 1: "Reckless", H: "Unburden"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	hitmonchan: {
 		num: 107,
@@ -747,6 +854,7 @@ module.exports = {
 		types: ["Fighting"],
 		baseStats: {hp: 50, atk: 105, def: 79, spa: 35, spd: 110, spe: 76},
 		abilities: {0: "Keen Eye", 1: "Iron Fist", H: "Inner Focus"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	lickitung: {
 		num: 108,
@@ -754,6 +862,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 90, atk: 55, def: 75, spa: 60, spd: 75, spe: 30},
 		abilities: {0: "Own Tempo", 1: "Oblivious", H: "Cloud Nine"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	koffing: {
 		num: 109,
@@ -761,6 +870,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 40, atk: 65, def: 95, spa: 60, spd: 45, spe: 35},
 		abilities: {0: "Levitate"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	weezing: {
 		num: 110,
@@ -768,6 +878,7 @@ module.exports = {
 		types: ["Poison"],
 		baseStats: {hp: 65, atk: 90, def: 120, spa: 85, spd: 70, spe: 60},
 		abilities: {0: "Levitate"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	rhyhorn: {
 		num: 111,
@@ -775,6 +886,7 @@ module.exports = {
 		types: ["Ground", "Rock"],
 		baseStats: {hp: 80, atk: 85, def: 95, spa: 30, spd: 30, spe: 25},
 		abilities: {0: "Lightning Rod", 1: "Rock Head", H: "Reckless"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	rhydon: {
 		num: 112,
@@ -782,6 +894,7 @@ module.exports = {
 		types: ["Ground", "Rock"],
 		baseStats: {hp: 105, atk: 130, def: 120, spa: 45, spd: 45, spe: 40},
 		abilities: {0: "Lightning Rod", 1: "Rock Head", H: "Reckless"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	chansey: {
 		num: 113,
@@ -789,6 +902,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 250, atk: 5, def: 5, spa: 35, spd: 105, spe: 50},
 		abilities: {0: "Natural Cure", 1: "Serene Grace", H: "Healer"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	tangela: {
 		num: 114,
@@ -796,6 +910,7 @@ module.exports = {
 		types: ["Grass"],
 		baseStats: {hp: 65, atk: 55, def: 115, spa: 100, spd: 40, spe: 60},
 		abilities: {0: "Chlorophyll", 1: "Leaf Guard", H: "Regenerator"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	kangaskhan: {
 		num: 115,
@@ -803,6 +918,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 105, atk: 95, def: 80, spa: 40, spd: 80, spe: 90},
 		abilities: {0: "Early Bird", 1: "Scrappy", H: "Inner Focus"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	horsea: {
 		num: 116,
@@ -810,6 +926,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 30, atk: 40, def: 70, spa: 70, spd: 25, spe: 60},
 		abilities: {0: "Swift Swim", 1: "Sniper", H: "Damp"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	seadra: {
 		num: 117,
@@ -817,6 +934,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 55, atk: 65, def: 95, spa: 95, spd: 45, spe: 85},
 		abilities: {0: "Poison Point", 1: "Sniper", H: "Damp"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	goldeen: {
 		num: 118,
@@ -824,6 +942,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 45, atk: 67, def: 60, spa: 35, spd: 50, spe: 63},
 		abilities: {0: "Swift Swim", 1: "Water Veil", H: "Lightning Rod"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	seaking: {
 		num: 119,
@@ -831,6 +950,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 80, atk: 92, def: 65, spa: 65, spd: 80, spe: 68},
 		abilities: {0: "Swift Swim", 1: "Water Veil", H: "Lightning Rod"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	staryu: {
 		num: 120,
@@ -838,6 +958,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 30, atk: 45, def: 55, spa: 70, spd: 55, spe: 85},
 		abilities: {0: "Illuminate", 1: "Natural Cure", H: "Analytic"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	starmie: {
 		num: 121,
@@ -845,6 +966,7 @@ module.exports = {
 		types: ["Water", "Psychic"],
 		baseStats: {hp: 60, atk: 75, def: 85, spa: 100, spd: 85, spe: 115},
 		abilities: {0: "Illuminate", 1: "Natural Cure", H: "Analytic"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	mrmime: {
 		num: 122,
@@ -852,6 +974,7 @@ module.exports = {
 		types: ["Psychic", "Fairy"],
 		baseStats: {hp: 40, atk: 45, def: 65, spa: 100, spd: 120, spe: 90},
 		abilities: {0: "Soundproof", 1: "Filter", H: "Technician"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	scyther: {
 		num: 123,
@@ -859,6 +982,7 @@ module.exports = {
 		types: ["Bug", "Flying"],
 		baseStats: {hp: 70, atk: 110, def: 80, spa: 55, spd: 80, spe: 105},
 		abilities: {0: "Swarm", 1: "Technician", H: "Steadfast"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	jynx: {
 		num: 124,
@@ -866,6 +990,7 @@ module.exports = {
 		types: ["Ice", "Psychic"],
 		baseStats: {hp: 65, atk: 50, def: 35, spa: 115, spd: 95, spe: 95},
 		abilities: {0: "Oblivious", 1: "Forewarn", H: "Dry Skin"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	electabuzz: {
 		num: 125,
@@ -873,6 +998,7 @@ module.exports = {
 		types: ["Electric"],
 		baseStats: {hp: 65, atk: 83, def: 57, spa: 95, spd: 85, spe: 105},
 		abilities: {0: "Static", H: "Vital Spirit"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	magmar: {
 		num: 126,
@@ -880,6 +1006,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 65, atk: 95, def: 57, spa: 100, spd: 85, spe: 93},
 		abilities: {0: "Flame Body", H: "Vital Spirit"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	pinsir: {
 		num: 127,
@@ -887,6 +1014,7 @@ module.exports = {
 		types: ["Bug"],
 		baseStats: {hp: 65, atk: 125, def: 100, spa: 55, spd: 70, spe: 85},
 		abilities: {0: "Hyper Cutter", 1: "Mold Breaker", H: "Moxie"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	tauros: {
 		num: 128,
@@ -894,6 +1022,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 75, atk: 100, def: 95, spa: 40, spd: 70, spe: 110},
 		abilities: {0: "Intimidate", 1: "Anger Point", H: "Sheer Force"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	magikarp: {
 		num: 129,
@@ -901,6 +1030,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 20, atk: 10, def: 55, spa: 15, spd: 20, spe: 80},
 		abilities: {0: "Swift Swim", H: "Rattled"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	gyarados: {
 		num: 130,
@@ -908,6 +1038,7 @@ module.exports = {
 		types: ["Water", "Flying"],
 		baseStats: {hp: 95, atk: 125, def: 79, spa: 60, spd: 100, spe: 81},
 		abilities: {0: "Intimidate", H: "Moxie"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	lapras: {
 		num: 131,
@@ -915,6 +1046,7 @@ module.exports = {
 		types: ["Water", "Ice"],
 		baseStats: {hp: 130, atk: 85, def: 80, spa: 85, spd: 95, spe: 60},
 		abilities: {0: "Water Absorb", 1: "Shell Armor", H: "Hydration"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	ditto: {
 		num: 132,	
@@ -922,6 +1054,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 48, atk: 48, def: 48, spa: 48, spd: 48, spe: 48},
 		abilities: {0: "Limber", H: "Imposter"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	eevee: {
 		num: 133,
@@ -929,6 +1062,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 55, atk: 55, def: 50, spa: 45, spd: 65, spe: 55},
 		abilities: {0: "Run Away", 1: "Adaptability", H: "Anticipation"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	vaporeon: {
 		num: 134,
@@ -936,6 +1070,7 @@ module.exports = {
 		types: ["Water"],
 		baseStats: {hp: 130, atk: 65, def: 60, spa: 110, spd: 95, spe: 65},
 		abilities: {0: "Water Absorb", H: "Hydration"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	jolteon: {
 		num: 135,
@@ -943,6 +1078,7 @@ module.exports = {
 		types: ["Electric"],
 		baseStats: {hp: 65, atk: 65, def: 60, spa: 110, spd: 95, spe: 130},
 		abilities: {0: "Volt Absorb", H: "Quick Feet"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	flareon: {
 		num: 136,
@@ -950,6 +1086,7 @@ module.exports = {
 		types: ["Fire"],
 		baseStats: {hp: 65, atk: 130, def: 60, spa: 95, spd: 110, spe: 65},
 		abilities: {0: "Flash Fire", H: "Guts"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	porygon: {
 		num: 137,
@@ -957,6 +1094,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 65, atk: 60, def: 70, spa: 85, spd: 75, spe: 40},
 		abilities: {0: "Trace", 1: "Download", H: "Analytic"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	omanyte: {
 		num: 138,
@@ -964,6 +1102,7 @@ module.exports = {
 		types: ["Rock", "Water"],
 		baseStats: {hp: 35, atk: 40, def: 100, spa: 90, spd: 55, spe: 35},
 		abilities: {0: "Swift Swim", 1: "Shell Armor", H: "Weak Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	omastar: {
 		num: 139,
@@ -971,6 +1110,7 @@ module.exports = {
 		types: ["Rock", "Water"],
 		baseStats: {hp: 70, atk: 60, def: 125, spa: 115, spd: 70, spe: 55},
 		abilities: {0: "Swift Swim", 1: "Shell Armor", H: "Weak Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	kabuto: {
 		num: 140,
@@ -978,6 +1118,7 @@ module.exports = {
 		types: ["Rock", "Water"],
 		baseStats: {hp: 30, atk: 80, def: 90, spa: 55, spd: 45, spe: 55},
 		abilities: {0: "Swift Swim", 1: "Battle Armor", H: "Weak Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	kabutops: {
 		num: 141,
@@ -985,6 +1126,7 @@ module.exports = {
 		types: ["Rock", "Water"],
 		baseStats: {hp: 60, atk: 115, def: 105, spa: 65, spd: 70, spe: 80},
 		abilities: {0: "Swift Swim", 1: "Battle Armor", H: "Weak Armor"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	aerodactyl: {
 		num: 142,
@@ -992,6 +1134,7 @@ module.exports = {
 		types: ["Rock", "Flying"],
 		baseStats: {hp: 80, atk: 105, def: 65, spa: 60, spd: 75, spe: 130},
 		abilities: {0: "Rock Head", 1: "Pressure", H: "Unnerve"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	snorlax: {
 		num: 143,
@@ -999,6 +1142,7 @@ module.exports = {
 		types: ["Normal"],
 		baseStats: {hp: 160, atk: 110, def: 65, spa: 65, spd: 110, spe: 30},
 		abilities: {0: "Immunity", 1: "Thick Fat", H: "Gluttony"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	articuno: {
 		num: 144,
@@ -1006,6 +1150,7 @@ module.exports = {
 		types: ["Ice", "Flying"],
 		baseStats: {hp: 90, atk: 85, def: 100, spa: 95, spd: 125, spe: 85},
 		abilities: {0: "Pressure", H: "Snow Cloak"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	zapdos: {
 		num: 145,
@@ -1013,6 +1158,7 @@ module.exports = {
 		types: ["Electric", "Flying"],
 		baseStats: {hp: 90, atk: 90, def: 85, spa: 125, spd: 90, spe: 100},
 		abilities: {0: "Pressure", H: "Static"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	moltres: {
 		num: 146,
@@ -1020,6 +1166,7 @@ module.exports = {
 		types: ["Fire", "Flying"],
 		baseStats: {hp: 90, atk: 100, def: 90, spa: 125, spd: 85, spe: 90},
 		abilities: {0: "Pressure", H: "Flame Body"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	dratini: {
 		num: 147,
@@ -1027,6 +1174,7 @@ module.exports = {
 		types: ["Dragon"],
 		baseStats: {hp: 41, atk: 64, def: 45, spa: 50, spd: 50, spe: 50},
 		abilities: {0: "Shed Skin", H: "Marvel Scale"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	dragonair: {
 		num: 148,
@@ -1034,6 +1182,7 @@ module.exports = {
 		types: ["Dragon"],
 		baseStats: {hp: 61, atk: 84, def: 65, spa: 70, spd: 70, spe: 70},
 		abilities: {0: "Shed Skin", H: "Marvel Scale"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	dragonite: {
 		num: 149,
@@ -1041,6 +1190,7 @@ module.exports = {
 		types: ["Dragon", "Flying"],
 		baseStats: {hp: 91, atk: 134, def: 95, spa: 100, spd: 100, spe: 80},
 		abilities: {0: "Inner Focus", H: "Multiscale"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	mewtwo: {
 		num: 150,
@@ -1049,6 +1199,7 @@ module.exports = {
 		
 		baseStats: {hp: 106, atk: 110, def: 90, spa: 154, spd: 90, spe: 130},
 		abilities: {0: "Pressure", H: "Unnerve"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	},
 	mew: {
 		num: 151,
@@ -1056,6 +1207,6 @@ module.exports = {
 		types: ["Psychic"],
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
 		abilities: {0: "Synchronize"},
+		moves: ["hyperbeam", "bodyslam", "blizzard", "thunder", "icebeam", "earthquake", "pinmissile", "drillpeck", "hydropump"],
 	}
-}
 }

@@ -14,6 +14,11 @@ db.once('open', () => {
 const express = require('express')
 const Router = require('./api/router')
 let app = express()
+
+let bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+
 new Router(app)
 
 

@@ -20,6 +20,7 @@ module.exports = class Router {
 		this.app.post('/api/createteam', this.createTeam)
 		// osv? Kanskje splitte i to modules, en for game-relaterte ting og en for /moves, /pokemon, osv, altså static content
 		this.app.get ('/api/pokemon', this.getAllPokemon.bind(this))
+		this.app.get ('/api/moves', this.getAllMoves.bind(this))
 	}
 
 	hello (req, res) {
@@ -126,5 +127,13 @@ module.exports = class Router {
 		}
 
 		res.json({pokemon: pokemonWithMoves})
+	}
+
+	getAllMoves (req, res) {
+		let moves = []
+		for (let moveKey in this.moves) {
+			moves.push(this.moves[moveKey])
+		}
+		res.json(moves)
 	}
 }

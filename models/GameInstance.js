@@ -7,10 +7,9 @@ let gameInstanceSchema = new mongoose.Schema({
 	gameToken: String,
 	playerNames: [String],
 	gameStage: {type: Number, default: 0},
-	gameFinished: {type: Boolean, default: false},
-	winner: {type: String, default: null},
-	state: { // usikker på om dette blir rett. Map istedenfor??
+	state: {
 		ready: Boolean,
+		winner: {type: String, default: null},
 		message: String,
 		gameState: [
 			{

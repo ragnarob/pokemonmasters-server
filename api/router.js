@@ -18,7 +18,6 @@ module.exports = class Router {
 		this.app.post('/api/joingame', this.addPlayerToGame)
 		this.app.post('/api/gamestatus', this.getGameStatus)
 		this.app.post('/api/createteam', this.createTeam.bind(this))
-		// osv? Kanskje splitte i to modules, en for game-relaterte ting og en for /moves, /pokemon, osv, altså static content
 		this.app.get ('/api/pokemon', this.getAllPokemon.bind(this))
 		this.app.get ('/api/moves', this.getAllMoves.bind(this))
 	}
@@ -55,7 +54,6 @@ module.exports = class Router {
 			gameInstance.state = {
 				ready: false,
 				message: '',
-				hasWinner: false,
 				gameState: gameInstance.playerNames.map(name => ({playerName: name, pokemon: []}))
 			}
 			
@@ -79,7 +77,6 @@ module.exports = class Router {
 		// assume from client:
 		// list of pokemon with move set
 		// [{name: charizard, moves: [fire blast, bla, bla2, bla3]}]
-
 		let [gameToken, playerName, pokemonList] = [req.body.gameToken, req.body.playerName, req.body.pokemonList]
 		try {
 			let gameInstance = await GameInstance.findOne({gameToken: gameToken})
@@ -131,6 +128,6 @@ module.exports = class Router {
 		for (let moveKey in this.moves) {
 			moves.push(this.moves[moveKey])
 		}
-		res.json(moves)
+		res.json({moves: moves})
 	}
 }

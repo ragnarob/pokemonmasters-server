@@ -19,3 +19,32 @@ class GameHandler():
     res = requests.post(base_url + '/joingame', data=req_body)
     return gameData['gameToken']
   
+  def setup_twoPlayerGameWithTeams(self):
+    gameToken = self.setup_twoPlayer_game()
+    req_body1 = {
+      'gameToken': gameToken,
+      'playerName': 'test',
+      'pokemonList': [
+        {'name': 'Charizard', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Charizard', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Ivysaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Ivysaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Venusaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Venusaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+      ]
+    }
+    req_body2 = {
+      'gameToken': gameToken,
+      'playerName': 'test2',
+      'pokemonList': [
+        {'name': 'Charizard', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Charizard', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Ivysaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Ivysaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Venusaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+        {'name': 'Venusaur', 'moves': ['hyperbeam', 'bodyslam', 'blizzard', 'thunder']},
+      ]
+    }
+    requests.post(base_url + '/createteam', data=json.dumps(req_body1), headers={'Content-Type': 'application/json'})
+    requests.post(base_url + '/createteam', data=json.dumps(req_body2), headers={'Content-Type': 'application/json'})
+    return gameToken

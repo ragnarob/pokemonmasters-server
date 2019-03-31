@@ -14,10 +14,10 @@ module.exports = class Router {
 
 	setupRoutes () {
 		this.app.get ('/', this.hello)
-		this.app.get ('/api/creategame', this.createGame)
+		this.app.post('/api/creategame', this.createGame)
 		this.app.post('/api/joingame', this.addPlayerToGame)
 		this.app.post('/api/gamestatus', this.getGameStatus)
-		this.app.post('/api/createteam', this.createTeam)
+		this.app.post('/api/createteam', this.createTeam.bind(this))
 		// osv? Kanskje splitte i to modules, en for game-relaterte ting og en for /moves, /pokemon, osv, altså static content
 		this.app.get ('/api/pokemon', this.getAllPokemon.bind(this))
 		this.app.get ('/api/moves', this.getAllMoves.bind(this))
@@ -45,7 +45,6 @@ module.exports = class Router {
 	}
 
 	async addPlayerToGame (req, res) {
-		console.log(req.body)
 		let [playerName, gameCode] = [req.body.playerName, req.body.gameCode]
 
 		try {
@@ -60,7 +59,7 @@ module.exports = class Router {
 				gameState: gameInstance.playerNames.map(name => ({playerName: name, pokemon: []}))
 			}
 			
-			gameInstance.save()
+			await gameInstance.save()
 			res.json({gameToken: gameInstance.gameToken})
 		}
 		catch (err) {
@@ -99,16 +98,15 @@ module.exports = class Router {
 				})
 
 				gameInstance.addPokemonToTeamWithPlayerName(playerName, inGamePokemon)
-				inGamePokemon.save()
+				await inGamePokemon.save()
 			}
 
-			if (gameInstance.state.gameState.every(gs => gs.pokemon.length > 0)) {
-				gameInstance.gameStage = 2
-			}
+			gameInstance.bumpGameStage()
+			await gameInstance.save()
 			res.json({status: 'success'})
 		}
 		catch (err) {
-			res.json({error: 'Some error'})
+			res.json({error: err.toString()})
 		}
 	}
 
@@ -116,7 +114,6 @@ module.exports = class Router {
 		let pokemonWithMoves = []
 		for (let pokemonKey in this.pokemon) {
 			let pokemon = this.pokemon[pokemonKey]
-			console.log(pokemon)
 			pokemon.detailedMoves = []
 			for (let moveKey in this.moves) {
 				if (pokemon.moves.indexOf(moveKey) > -1) {

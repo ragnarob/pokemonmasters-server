@@ -23,7 +23,7 @@ let gameInstanceSchema = new mongoose.Schema({
 
 gameInstanceSchema.methods.addPlayer = function (playerName) {
 	this.playerNames.push(playerName)
-	this.state.gameStage = 1
+	this.gameStage = 1
 }
 
 gameInstanceSchema.methods.generateGameCode = function () {
@@ -52,5 +52,8 @@ gameInstanceSchema.methods.addPokemonToTeamWithPlayerName = function (playerName
 	}
 }
 
+gameInstanceSchema.methods.bumpGameStage = function () {
+	this.gameStage += 1
+}
 
 module.exports = mongoose.model('GameInstance', gameInstanceSchema)

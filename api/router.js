@@ -18,8 +18,55 @@ module.exports = class Router {
 		this.app.post('/api/joingame', this.addPlayerToGame)
 		this.app.post('/api/gamestatus', this.getGameStatus)
 		this.app.post('/api/createteam', this.createTeam.bind(this))
+		// GameLogic
+		this.app.post('/api/game/action'), this.addAction.bind(this)
+
 		this.app.get ('/api/pokemon', this.getAllPokemon.bind(this))
 		this.app.get ('/api/moves', this.getAllMoves.bind(this))
+	}
+
+
+	//<< GAMELOGIC: -----------------------
+	async addAction(req, res) {
+		let [playerName, actionName, gameCode] =
+			[req.body.playerName, req.body.actionName, req.body.gameCode]
+
+		try {
+			let gameInstance = await GameInstance.findOne({gameCode: gameCode})
+			if (!gameInstance) { return res.json({error: 'Incorrect code'}) }
+
+			gameInstance.addAction(playerName, actionName)
+
+			await gameInstance.save()
+			res.json({gameToken: gameInstance.gameToken})
+		}
+		catch (err) {
+			res.json({error: 'Error updating action'})
+		}
+	}
+	// -------------------------------- >>
+
+
+	async addPlayerToGame (req, res) {
+		let [playerName, gameCode] = [req.body.playerName, req.body.gameCode]
+
+		try {
+			let gameInstance = await GameInstance.findOne({gameCode: gameCode})
+			if (!gameInstance) { return res.json({error: 'Incorrect code'}) }
+
+			gameInstance.addPlayer(playerName)
+			gameInstance.state = {
+				ready: false,
+				message: '',
+				gameState: gameInstance.playerNames.map(name => ({playerName: name, pokemon: []}))
+			}
+
+			await gameInstance.save()
+			res.json({gameToken: gameInstance.gameToken})
+		}
+		catch (err) {
+			res.json({error: 'Some error'})
+		}
 	}
 
 	hello (req, res) {
@@ -43,27 +90,6 @@ module.exports = class Router {
 		}
 	}
 
-	async addPlayerToGame (req, res) {
-		let [playerName, gameCode] = [req.body.playerName, req.body.gameCode]
-
-		try {
-			let gameInstance = await GameInstance.findOne({gameCode: gameCode})
-			if (!gameInstance) { return res.json({error: 'Incorrect code'}) }
-
-			gameInstance.addPlayer(playerName)
-			gameInstance.state = {
-				ready: false,
-				message: '',
-				gameState: gameInstance.playerNames.map(name => ({playerName: name, pokemon: []}))
-			}
-			
-			await gameInstance.save()
-			res.json({gameToken: gameInstance.gameToken})
-		}
-		catch (err) {
-			res.json({error: 'Some error'})
-		}
-	}
 
 	async getGameStatus (req, res) {
 		// let gameToken = 'TeRfZu2ANmzr4wQueVmJetI0H'    // For testing

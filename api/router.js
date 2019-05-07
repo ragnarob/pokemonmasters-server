@@ -1,5 +1,6 @@
 let GameInstance = require('../models/GameInstance')
 let InGamePokemon = require('../models/InGamePokemon')
+let GameLogic = require('./GameLogic')
 
 module.exports = class Router {
 	constructor (app) {
@@ -28,14 +29,18 @@ module.exports = class Router {
 
 	//<< GAMELOGIC: -----------------------
 	async addAction(req, res) {
-		let [playerName, actionName, gameCode] =
-			[req.body.playerName, req.body.actionName, req.body.gameCode]
+		let [playerName, actionType, moveName, swapPosition] =
+			[req.body.playerName, req.body.type, req.body.move, req.body.swap]
 
 		try {
 			let gameInstance = await GameInstance.findOne({gameCode: gameCode})
 			if (!gameInstance) { return res.json({error: 'Incorrect code'}) }
 
-			gameInstance.addAction(playerName, actionName)
+			gameInstance.addAction(playerName, actionType, moveName, swapPosition)
+			
+			if (gameInstance.state.actions.length == 2) {
+				GameLogic.calculateOutcome(gameInstance)
+			}
 
 			await gameInstance.save()
 			res.json({gameToken: gameInstance.gameToken})
@@ -119,6 +124,9 @@ module.exports = class Router {
 					positionInParty: i,
 					moves: pokemonMoves
 				})
+
+				inGamePokemon.baseStats['hp'] = inGamePokemon.baseStats['hp']*2 //hotfix. kan endres. 
+				inGamePokemon.stats['hp'] = inGamePokemon.baseStats['hp']*2 //hotfix. kan endres. 
 
 				gameInstance.addPokemonToTeamWithPlayerName(playerName, inGamePokemon)
 				await inGamePokemon.save()

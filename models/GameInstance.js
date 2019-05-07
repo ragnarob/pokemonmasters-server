@@ -9,20 +9,14 @@ let gameInstanceSchema = new mongoose.Schema({
 	gameStage: {type: Number, default: 0},
 	state: {
 		round: {type: int, default: 1},
-
-		//<< GAMELOGIC ---------------
-		action1: {
-			playerName: string,
-			actionName: string,
-			default: null
-		},
-		action2: {
-			playerName: string,
-			actionName: string,
-			default: null
-		},
-		// ------------------- >>
-
+		actions: [
+			{
+				playerName: String,
+				actionType: String, // 'move' or 'swap'
+				moveName: {type: String, required: false},
+				swapPosition: {type: Number, required: false}
+			}
+		],
 		winner: {type: String, default: null},
 		message: String,
 		gameState: [
@@ -35,14 +29,14 @@ let gameInstanceSchema = new mongoose.Schema({
 })
 
 //<< GAMELOGIC --------------------------
-gameInstanceSchema.methods.addAction = function (playerName, actionName) {
-	if (this.state.action1 === null) {
-		[this.state.action1.playerName, this.state.action1.actionName] = [actionName, playerName];
-	}
-	else {
-		[this.state.action2.playerName, this.state.action2.actionName] = [actionName, playerName];
-	}
-};
+gameInstanceSchema.methods.addAction = function (playerName, actionType, moveName, swapPosition) {
+	this.state.actions.push({
+		playerName: playerName,
+		actionType: actionType,
+		moveName: moveName,
+		swapPosition: swapPosition
+	})
+}
 // ---------------------------- >>
 
 

@@ -1,26 +1,15 @@
-/*
-Basically logikken for hva som skjer når begge spillerne har valgt sitt angrep (eller bytte).
-Begge spillere kaller /api/game/action med hver sin payload som inneholder info om angrep/bytte.
-Så serveren mottar disse og oppdaterer GameInstance.
-Når begge har sendt en slik, kalkuleres outcome basert på en del regler som gjelder i pokemon,
-lett å finne på internett.
-Når outcome har blitt kalkulert økes 'round' i GameInstance med 1,
-i tillegg til at data om pokemonene  (hp, position i party osv)
-blir oppdatert i GameInstance sin state.gameState
- */
-
 let moves = require('../static/moves')
 
 module.exports = class GameLogic {
   static calculateOutcome (gameInstance) {
-    gameState = gameInstance.state
+    let gameState = gameInstance.state
     gameState.message = ''
 
     // Swap always first
     let swapActions = gameState.actions.filter(action => action.actionType==='swap')
     for (let playerAction of swapActions) {
-      let playerGameState = gameState.gameState.find(gs => gs.playerName===playerName)
-      gameState.message += `${playerAction.playerName} swapped ${playerGameState.pokemon[0]} for ${playerGameState.pokemon[playerAction.swapPosition-1]}!\n`
+      let playerGameState = gameState.gameState.find(gs => gs.playerName===playerAction.playerName)
+      gameState.message += `${playerAction.playerName} swapped ${playerGameState.pokemon[0].name} for ${playerGameState.pokemon[playerAction.swapPosition-1].name}!\n`
       playerGameState.pokemon = this.swapPokemon(playerGameState.pokemon, playerAction.swapPosition)
     }
 
@@ -28,19 +17,21 @@ module.exports = class GameLogic {
       gameState = this.handleTwoMoves(gameState)
     }
     else if (swapActions.length == 1) {
-      gameState = this.handleOneMove(gameState)
+      gameState = this.handleOneMove(gameState, gameState.actions.find(action => action.actionType!='swap').playerName)
     }
 
     gameState.round += 1
     gameState.actions = []
     gameInstance.gameState = gameState
-    gameInstance.save()
+    return gameInstance
   }
 
   static handleTwoMoves (gameState) {
     let playerToMoveFirst
     let playerToMoveLast
-    if (gameState.gameState[0].pokemon[0].stats['spd'] > gameState.gameState[1].pokemon[0].stats['spd']) {
+    let firstPlayerSpeed = Number(this.getCurrentPokemon(gameState.gameState[0].pokemon).stats.get('spd'))
+    let secondPlayerSpeed = Number(this.getCurrentPokemon(gameState.gameState[1].pokemon).stats.get('spd'))
+    if (firstPlayerSpeed > secondPlayerSpeed) {
       playerToMoveFirst = gameState.gameState[0].playerName
       playerToMoveLast = gameState.gameState[1].playerName
     }
@@ -60,16 +51,16 @@ module.exports = class GameLogic {
   }
 
   static handleOneMove (gameState, attackingPlayerName) {
-    let moveAction = gameState.actions.where(action => action.playerName===attackingPlayerName)
-    let moveData = Object.values(moves).find(m => m.name == moveAction.moveName)
+    let moveAction = gameState.actions.find(action => action.playerName===attackingPlayerName)
+    let moveData = moves[moveAction.moveName]
 
-    let attackingPlayerGameState = gameState.gameState.find(gs => gs.playerName===attackingPlayerName)
+    let attackingPlayerGameState = gameState.gameState.find(gs => gs.playerName==attackingPlayerName)
     let defendingPlayerGameState = gameState.gameState.find(gs => gs.playerName!=attackingPlayerName)
-    
-    let attackingPokemon = attackingPlayerGameState.pokemon[0]
-    let defendingPokemon = defendingPlayerGameState.pokemon[0]
 
-    let moveHit = Math.random()*100 > moveData.accuracy
+    let attackingPokemon = this.getCurrentPokemon(attackingPlayerGameState.pokemon)
+    let defendingPokemon = this.getCurrentPokemon(defendingPlayerGameState.pokemon)
+
+    let moveHit = Math.random()*100 > 100-moveData.accuracy
 
     if (!moveHit) {
       gameState.message += `${attackingPokemon.name} used ${moveData.name}, but it missed!\n`
@@ -80,16 +71,16 @@ module.exports = class GameLogic {
     let offensiveStatMultiplier
     let defensiveStatMultiplier
     if (moveData.category === 'Special') {
-      offensiveStatMultiplier = attackingPokemon.stats['atk']
-      defensiveStatMultiplier = defendingPokemon.stats['def']
+      offensiveStatMultiplier = attackingPokemon.stats.get('atk')
+      defensiveStatMultiplier = defendingPokemon.stats.get('def')
     }
     else {
-      offensiveStatMultiplier = attackingPokemon.stats['spa']
-      defensiveStatMultiplier = defendingPokemon.stats['spd']
+      offensiveStatMultiplier = attackingPokemon.stats.get('spa')
+      defensiveStatMultiplier = defendingPokemon.stats.get('spd')
     }
 
-    let damage = ((22 * moveData.basePower * (offensiveStatMultiplier/defensiveStatMultiplier))/50)+2
 
+    let damage = ((22 * moveData.basePower * (Number(offensiveStatMultiplier)/Number(defensiveStatMultiplier)))/50)+2
     // calculate STAB
     if (attackingPokemon.types.indexOf(moveData.type)) {
       damage *= 1.5
@@ -98,26 +89,28 @@ module.exports = class GameLogic {
     // Kan kalkulere critical hit. Noen andre kan slå opp dette.
     // Hvis det blir crit, husk å legge det til i message
 
-    // calculate type multiplier TODO NOEN ANDRE PLS
+    // calculate type multiplier TODO NOEN ANDRE dette er LETT bare 
+    // slå opp hva som er super effective mot hva annet (ta høyde for at det kan 
+    // bli dobbelt også osv) og hvor mye multiplier det skal være.
     // så blir baseDamage oppdatert.
 
-    defendingPokemon['hp'] -= damage
+    defendingPokemon.stats.set('hp', defendingPokemon.stats.get('hp') - damage)
+    gameState.message += `${attackingPokemon.name} used ${moveData.name} for ${Math.round(damage)} damage.\n`
 
-    message += `${attackingPokemon.name} used ${moveData.name} for ${damage} damage.\n`
+    if (defendingPokemon.stats.get('hp') <= 0) {
+      defendingPokemon.alive = false
+      let nextLivingPokemon = defendingPlayerGameState.pokemon.find(p => p.alive == true)
 
-    if (defendingPokemon['hp'] <= 0) {
-      defendingPokemon['alive'] = false
-      let nextLivingPokemonIndex = defendingPlayerGameState.pokemon.findIndex(p => p.alive == true)
       // if game over
-      if (nextLivingPokemonIndex == -1) {
+      if (!nextLivingPokemon) {
         gameState.winner = attackingPlayerName
-        gameState.message += `${defendingPokemon} fainted! ${defendingPlayerGameState.playerName} WINS!\n`
+        gameState.message += `${defendingPokemon.name} fainted! ${defendingPlayerGameState.playerName} WINS!\n`
       }
       // ellers bare dead pokemon
       else {
         // FOR NOW: Vi bare setter inn neste levende pokemon i party. Bør forbedres tho.
-        gameState.message += `${defendingPokemon} fainted! ${defendingPlayerGameState.playerName} sent out ${defendingPlayerGameState.pokemon[nextLivingPokemonIndex]}!\n`
-        this.swapPokemon(defendingPlayerGameState.pokemon, nextLivingPokemonIndex+1)
+        gameState.message += `${defendingPokemon.name} fainted! ${defendingPlayerGameState.playerName} sent out ${nextLivingPokemon.name}!\n`
+        defendingPlayerGameState.pokemon = this.swapPokemon(defendingPlayerGameState.pokemon, nextLivingPokemon.positionInParty)
       }
     }
 
@@ -125,10 +118,14 @@ module.exports = class GameLogic {
   }
 
   static swapPokemon (playerPokemonParty, swapPosition) {
-    let currentPokemon = playerPokemonParty[0]
-    playerPokemonParty[0] = playerPokemonParty[swapPosition-1]
-    playerPokemonParty[swapPosition-1] = currentPokemon
+    let currentPokemon = this.getCurrentPokemon(playerPokemonParty)
+    playerPokemonParty.find(p => p.positionInParty==swapPosition).positionInParty = 1
+    currentPokemon.positionInParty = swapPosition
     return playerPokemonParty
+  }
+
+  static getCurrentPokemon(playerPokemonParty) {
+    return playerPokemonParty.find(pok => pok.positionInParty == 1)
   }
 
   static getPlayerGameState (gameState, playerName) {

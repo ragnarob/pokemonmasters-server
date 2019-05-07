@@ -1,5 +1,6 @@
 let GameInstance = require('../models/GameInstance')
 let InGamePokemon = require('../models/InGamePokemon')
+let mongoose = require('mongoose')
 let GameLogic = require('./GameLogic')
 
 module.exports = class Router {
@@ -19,8 +20,9 @@ module.exports = class Router {
 		this.app.post('/api/joingame', this.addPlayerToGame)
 		this.app.post('/api/gamestatus', this.getGameStatus)
 		this.app.post('/api/createteam', this.createTeam.bind(this))
+		this.app.post('/api/game/gamestatus', this.getIngameGameStatus.bind(this))
 		// GameLogic
-		this.app.post('/api/game/action'), this.addAction.bind(this)
+		this.app.post('/api/game/action', this.addAction.bind(this))
 
 		this.app.get ('/api/pokemon', this.getAllPokemon.bind(this))
 		this.app.get ('/api/moves', this.getAllMoves.bind(this))
@@ -29,23 +31,36 @@ module.exports = class Router {
 
 	//<< GAMELOGIC: -----------------------
 	async addAction(req, res) {
-		let [playerName, actionType, moveName, swapPosition] =
-			[req.body.playerName, req.body.type, req.body.move, req.body.swap]
+		let [gameToken, playerName, actionType, moveName, swapPosition] =
+			[req.body.gameToken, req.body.playerName, req.body.type, req.body.move, req.body.swap]
 
 		try {
-			let gameInstance = await GameInstance.findOne({gameCode: gameCode})
-			if (!gameInstance) { return res.json({error: 'Incorrect code'}) }
+			let gameInstance = await GameInstance.findOne({gameToken: gameToken})
+			if (!gameInstance) { return res.json({error: 'Incorrect game token'}) }
+
+			for (let playerState of gameInstance.state.gameState) {
+				let mongooseInGamePokemonIds = playerState.pokemon.map(pokId => mongoose.Types.ObjectId(pokId))
+				let pokemon = await InGamePokemon.find({'_id': {$in: mongooseInGamePokemonIds}})
+				playerState.pokemon = pokemon
+			}
 
 			gameInstance.addAction(playerName, actionType, moveName, swapPosition)
 			
 			if (gameInstance.state.actions.length == 2) {
-				GameLogic.calculateOutcome(gameInstance)
+				gameInstance = GameLogic.calculateOutcome(gameInstance)
 			}
 
-			await gameInstance.save()
+			gameInstance.save()
+			for (let playerState of gameInstance.state.gameState) {
+				for (let inGamePokemon of playerState.pokemon) {
+					await inGamePokemon.save()
+				}
+			}
+
 			res.json({gameToken: gameInstance.gameToken})
 		}
 		catch (err) {
+			console.log(err)
 			res.json({error: 'Error updating action'})
 		}
 	}
@@ -111,7 +126,7 @@ module.exports = class Router {
 		let [gameToken, playerName, pokemonList] = [req.body.gameToken, req.body.playerName, req.body.pokemonList]
 		try {
 			let gameInstance = await GameInstance.findOne({gameToken: gameToken})
-			if (!gameInstance) { res.json({error: 'Invalid game token'}) }
+			if (!gameInstance) { return res.json({error: 'Invalid game token'}) }
 			
 			for (var i=0; i<pokemonList.length; i++) {
 				let pokemonData = this.pokemon[pokemonList[i].name.toLowerCase()]
@@ -121,12 +136,9 @@ module.exports = class Router {
 					types: pokemonData.types,
 					baseStats: new Map(Object.entries(pokemonData.baseStats)),
 					stats: new Map(Object.entries(pokemonData.baseStats)),
-					positionInParty: i,
+					positionInParty: i+1,
 					moves: pokemonMoves
 				})
-
-				inGamePokemon.baseStats['hp'] = inGamePokemon.baseStats['hp']*2 //hotfix. kan endres. 
-				inGamePokemon.stats['hp'] = inGamePokemon.baseStats['hp']*2 //hotfix. kan endres. 
 
 				gameInstance.addPokemonToTeamWithPlayerName(playerName, inGamePokemon)
 				await inGamePokemon.save()
@@ -138,6 +150,29 @@ module.exports = class Router {
 		}
 		catch (err) {
 			res.json({error: err.toString()})
+		}
+	}
+
+	async getIngameGameStatus (req, res) {
+		let [gameToken] = [req.body.gameToken]
+
+		try {
+			let gameInstance = await GameInstance.findOne({gameToken: gameToken})
+			if (!gameInstance) { return res.json({error: 'Incorrect token'}) }
+
+			for (let playerState of gameInstance.state.gameState) {
+				let mongooseInGamePokemonIds = playerState.pokemon.map(pokId => mongoose.Types.ObjectId(pokId))
+				let pokemon = await InGamePokemon.find({
+					'_id': {$in: mongooseInGamePokemonIds}
+				})
+				playerState.pokemon = pokemon
+			}
+
+			res.json({gameInstance})
+		}
+		catch (err) {
+			console.log(err)
+			res.json({error: 'Some error'})
 		}
 	}
 

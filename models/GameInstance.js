@@ -8,7 +8,7 @@ let gameInstanceSchema = new mongoose.Schema({
 	playerNames: [String],
 	gameStage: {type: Number, default: 0},
 	state: {
-		round: {type: int, default: 1},
+		round: {type: Number, default: 1},
 		actions: [
 			{
 				playerName: String,

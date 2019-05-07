@@ -9,6 +9,7 @@ module.exports = {
 		name: "Hyper Beam",
 		pp: 5,
 		type: "Normal",
+    priority: 1,
     },
     // De neste 7 har sjanse for status conditions eller å senke stats. Logikk for dette implementeres senere
     "bodyslam": {
@@ -21,6 +22,7 @@ module.exports = {
 		name: "Body Slam",
         pp: 15,
         type: "Normal",
+    priority: 1,
     },
     "blizzard": {
 		num: 59,
@@ -32,6 +34,7 @@ module.exports = {
 		name: "Blizzard",
 		pp: 5,
 		type: "Ice",
+    priority: 1,
     },
     "thunder": {
 		num: 87,
@@ -43,7 +46,8 @@ module.exports = {
 		name: "Thunder",
 		pp: 10,
 		type: "Electric",
-	},
+	priority: 1,
+    },
     "psychic": {
 		num: 94,
 		accuracy: 100,
@@ -54,6 +58,7 @@ module.exports = {
 		name: "Psychic",
 		pp: 10,
 		type: "Psychic",
+    priority: 1,
     },
     "fireblast": {
 		num: 126,
@@ -65,6 +70,7 @@ module.exports = {
 		name: "Fire Blast",
 		pp: 5,
 		type: "Fire",
+    priority: 1,
     },
     "icebeam": {
 		num: 58,
@@ -76,6 +82,7 @@ module.exports = {
 		name: "Ice Beam",
 		pp: 10,
 		type: "Ice",
+    priority: 1,
     },
     "thunderbolt": {
 		num: 85,
@@ -87,6 +94,7 @@ module.exports = {
 		name: "Thunderbolt",
 		pp: 15,
 		type: "Electric",
+    priority: 1,
     },
     "surf": {
 		num: 57,
@@ -98,6 +106,7 @@ module.exports = {
 		name: "Surf",
 		pp: 15,
 		type: "Water",
+    priority: 1,
     },
     "earthquake": {
 		num: 89,
@@ -109,6 +118,7 @@ module.exports = {
 		name: "Earthquake",
 		pp: 10,
 		type: "Ground",
+    priority: 1,
     },
     "rockslide": {
 		num: 157,
@@ -120,6 +130,7 @@ module.exports = {
 		name: "Rock Slide",
 		pp: 10,
 		type: "Rock",
+    priority: 1,
     },
     // De to neste er multihit moves. Kan implementere logikk for det senere
     "doublekick": {
@@ -132,6 +143,7 @@ module.exports = {
 		name: "Double Kick",
 		pp: 30,
 		type: "Fighting",
+    priority: 1,
     },
     "pinmissile": {
 		num: 42,
@@ -143,6 +155,7 @@ module.exports = {
 		name: "Pin Missile",
 		pp: 20,
 		type: "Bug",
+    priority: 1,
     },
     "hydropump": {
 		num: 56,
@@ -154,6 +167,7 @@ module.exports = {
 		name: "Hydro Pump",
 		pp: 5,
 		type: "Water",
+    priority: 1,
     },
     "drillpeck": {
 		num: 65,
@@ -165,5 +179,6 @@ module.exports = {
 		name: "Drill Peck",
 		pp: 20,
 		type: "Flying",
-    }
+    priority: 1,
+	}
 }

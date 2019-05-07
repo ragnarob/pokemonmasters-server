@@ -8,6 +8,7 @@ let inGamePokemonSchema = new mongoose.Schema({
     positionInParty: Number,
     statusEffect: {type: [String], default: []},
     moves: [String],
+    alive: {type: Boolean, default: true},
     
     // Other things, will probably be expanded. Depends on moves.
     immunityTurns: {type: Number, default: 0}

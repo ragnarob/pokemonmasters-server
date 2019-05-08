@@ -112,11 +112,11 @@ module.exports = class GameLogic {
     let notEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[2].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
 
     if(superEffective.size() > 0){
-      effectiveness *= superEffective.size()
+      effectiveness *= 2**superEffective.size()
       gameState.message += `It's super effective!`
     }
     if(notVeryEffective.size() > 0){
-      effectiveness *= notVeryEffective.size()
+      effectiveness *= 0.5**notVeryEffective.size()
       gameState.message += `It's not very effective`
     }
     if(notEffective > 0){

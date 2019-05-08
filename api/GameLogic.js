@@ -55,9 +55,10 @@ module.exports = class GameLogic {
     let crit = 1
     let STAB = 1
     let effectiveness = 1
-    let modifier = crit * STAB * effectiveness
+    let randomDamageRange = Math.floor(((Math.random() * 39) + 217)/255);
+    let modifier = crit * STAB * effectiveness * randomDamageRange
 
-    let moveType = moveData.type.indexOf(types.name)
+    let moveType = types.name.indexOf(moveData.type)
     
     let moveAction = gameState.actions.find(action => action.playerName===attackingPlayerName)
     let moveData = moves[moveAction.moveName]

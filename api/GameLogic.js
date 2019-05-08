@@ -56,6 +56,8 @@ module.exports = class GameLogic {
     let STAB = 1
     let effectiveness = 1
     let modifier = crit * STAB * effectiveness
+
+    let moveType = moveData.type.indexOf(types.name)
     
     let moveAction = gameState.actions.find(action => action.playerName===attackingPlayerName)
     let moveData = moves[moveAction.moveName]
@@ -105,8 +107,21 @@ module.exports = class GameLogic {
     // calculate type multiplier TODO NOEN ANDRE dette er LETT bare 
 
     //Prøver her å koble attackingPokemons move-type mot defendingPokemon-type via types.js sin battleProperties-logikk
-    if (types.name == attackingPokemon.moves.indexOf(moveData.name) && defendingPokemon.types.indexOf(types.battleProperties.Power[0])) {
-      effectiveness *= 2
+    let superEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[0].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
+    let notVeryEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[1].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
+    let notEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[2].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
+
+    if(superEffective.size() > 0){
+      effectiveness *= superEffective.size()
+      gameState.message += `It's super effective!`
+    }
+    if(notVeryEffective.size() > 0){
+      effectiveness *= notVeryEffective.size()
+      gameState.message += `It's not very effective`
+    }
+    if(notEffective > 0){
+      damage = 0
+      gameState.message += `It does not affect ${defendingPokemon.name}`
     }
 
     // slå opp hva som er super effective mot hva annet (ta høyde for at det kan 

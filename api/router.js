@@ -21,15 +21,12 @@ module.exports = class Router {
 		this.app.post('/api/gamestatus', this.getGameStatus)
 		this.app.post('/api/createteam', this.createTeam.bind(this))
 		this.app.post('/api/game/gamestatus', this.getIngameGameStatus.bind(this))
-		// GameLogic
 		this.app.post('/api/game/action', this.addAction.bind(this))
 
 		this.app.get ('/api/pokemon', this.getAllPokemon.bind(this))
 		this.app.get ('/api/moves', this.getAllMoves.bind(this))
 	}
 
-
-	//<< GAMELOGIC: -----------------------
 	async addAction(req, res) {
 		let [gameToken, playerName, actionType, moveName, swapPosition] =
 			[req.body.gameToken, req.body.playerName, req.body.type, req.body.move, req.body.swap]
@@ -64,8 +61,6 @@ module.exports = class Router {
 			res.json({error: 'Error updating action'})
 		}
 	}
-	// -------------------------------- >>
-
 
 	async addPlayerToGame (req, res) {
 		let [playerName, gameCode] = [req.body.playerName, req.body.gameCode]

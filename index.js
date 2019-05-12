@@ -1,4 +1,3 @@
-/// bare tull for testing
 var mongoose = require('mongoose')
 
 let url = 'mongodb+srv://progg:pokemon1@pokemoncluster-frbac.mongodb.net/test'
@@ -10,7 +9,6 @@ db.once('open', () => {
 	console.log('connected')
 })
 
-/////////////////////////////////////////////////////////////
 const express = require('express')
 const Router = require('./api/router')
 let app = express()
@@ -20,5 +18,3 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
 new Router(app)
-
-

@@ -28,8 +28,11 @@ let gameInstanceSchema = new mongoose.Schema({
 	}
 })
 
-//<< GAMELOGIC --------------------------
 gameInstanceSchema.methods.addAction = function (playerName, actionType, moveName, swapPosition) {
+	if (this.state.actions.length != 0 && this.state.actions[0].playerName == playerName) {
+		return
+	}
+
 	this.state.actions.push({
 		playerName: playerName,
 		actionType: actionType,
@@ -37,8 +40,6 @@ gameInstanceSchema.methods.addAction = function (playerName, actionType, moveNam
 		swapPosition: swapPosition
 	})
 }
-// ---------------------------- >>
-
 
 gameInstanceSchema.methods.addPlayer = function (playerName) {
 	this.playerNames.push(playerName)

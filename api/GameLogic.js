@@ -1,4 +1,5 @@
 let moves = require('../static/moves')
+let types = require('../static/types')
 
 module.exports = class GameLogic {
   static calculateOutcome (gameInstance) {
@@ -51,6 +52,14 @@ module.exports = class GameLogic {
   }
 
   static handleOneMove (gameState, attackingPlayerName) {
+    let crit = 1
+    let STAB = 1
+    let effectiveness = 1
+    let randomDamageRange = Math.floor(((Math.random() * 39) + 217)/255);
+    let modifier = crit * STAB * effectiveness * randomDamageRange
+
+    let moveType = types.name.indexOf(moveData.type)
+    
     let moveAction = gameState.actions.find(action => action.playerName===attackingPlayerName)
     let moveData = moves[moveAction.moveName]
 
@@ -80,16 +89,42 @@ module.exports = class GameLogic {
     }
 
 
-    let damage = ((22 * moveData.basePower * (Number(offensiveStatMultiplier)/Number(defensiveStatMultiplier)))/50)+2
+    let damage = modifier*((22 * moveData.basePower * (Number(offensiveStatMultiplier)/Number(defensiveStatMultiplier)))/50)+2
     // calculate STAB
     if (attackingPokemon.types.indexOf(moveData.type)) {
-      damage *= 1.5
+      STAB *= 1.5
     }
 
     // Kan kalkulere critical hit. Noen andre kan slå opp dette.
     // Hvis det blir crit, husk å legge det til i message
 
+    // Calculate crit 
+    let critChance = 0.0625
+    if (Math.random() < critChance){
+      crit *= 2
+      gameState.message += `Critical hit!\n`
+    }
+
     // calculate type multiplier TODO NOEN ANDRE dette er LETT bare 
+
+    //Prøver her å koble attackingPokemons move-type mot defendingPokemon-type via types.js sin battleProperties-logikk
+    let superEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[0].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
+    let notVeryEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[1].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
+    let notEffective = attackingPokemon.moveType.battleProperties.Offensive.Power[2].filter(attackingMove => defendingPokemon.types.includes(attackingMove))
+
+    if(superEffective.size() > 0){
+      effectiveness *= 2**superEffective.size()
+      gameState.message += `It's super effective!`
+    }
+    if(notVeryEffective.size() > 0){
+      effectiveness *= 0.5**notVeryEffective.size()
+      gameState.message += `It's not very effective`
+    }
+    if(notEffective > 0){
+      damage = 0
+      gameState.message += `It does not affect ${defendingPokemon.name}`
+    }
+
     // slå opp hva som er super effective mot hva annet (ta høyde for at det kan 
     // bli dobbelt også osv) og hvor mye multiplier det skal være.
     // så blir baseDamage oppdatert.

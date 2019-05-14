@@ -4,6 +4,8 @@ let mongoose = require('mongoose')
 let GameLogic = require('./GameLogic')
 
 module.exports = class Router {
+	static isEditingDocument = false
+
 	constructor (app) {
 		this.pokemon = require('../static/pokemon')
 		this.moves = require('../static/moves')
@@ -31,7 +33,14 @@ module.exports = class Router {
 		let [gameToken, playerName, actionType, moveName, swapPosition] =
 			[req.body.gameToken, req.body.playerName, req.body.type, req.body.move, req.body.swap]
 
+		while (Router.isEditingDocument) {
+			console.log('waiting 500 ms')
+			await this.wait500ms()
+			console.log('waited 500 ms')
+		}
+
 		try {
+			Router.isEditingDocument = true
 			let gameInstance = await GameInstance.findOne({gameToken: gameToken})
 			if (!gameInstance) { return res.json({error: 'Incorrect game token'}) }
 
@@ -64,6 +73,9 @@ module.exports = class Router {
 			console.log(err)
 			res.json({error: 'Error updating action'})
 		}
+		finally {
+			Router.isEditingDocument = false
+		}
 	}
 
 	async saveState (res, gameInstance) {
@@ -72,6 +84,7 @@ module.exports = class Router {
 			res.json({gameToken: gameInstance.gameToken})
 		}
 		catch (err) {
+			console.log('should not happen')
 			await this.wait500ms()
 			gameInstance.save()
 			res.json({gameToken: gameInstance.gameToken})

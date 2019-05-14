@@ -47,44 +47,18 @@ module.exports = class Router {
 				gameInstance = GameLogic.calculateOutcome(gameInstance)
 			}
 
-			let successfulSave = false
-			await this.saveState(res, gameInstance)
+			await gameInstance.save()
 
 			for (let playerState of gameInstance.state.gameState) {
 				for (let inGamePokemon of playerState.pokemon) {
 					await inGamePokemon.save()
 				}
 			}
-			
-			if (successfulSave) {
-				res.json({gameToken: gameInstance.gameToken})
-			}
 		}
 		catch (err) {
 			console.log(err)
 			res.json({error: 'Error updating action'})
 		}
-	}
-
-	async saveState (res, gameInstance) {
-		try {
-			gameInstance.save()
-			res.json({gameToken: gameInstance.gameToken})
-		}
-		catch (err) {
-			await this.wait500ms()
-			gameInstance.save()
-			res.json({gameToken: gameInstance.gameToken})
-		}
-		finally {
-			return
-		}
-	}
-
-	async wait500ms () {
-		return new Promise((resolve, reject) => {
-			setTimeout(function () {resolve(0)}, 500)
-		})
 	}
 
 	async addPlayerToGame (req, res) {

@@ -47,7 +47,13 @@ module.exports = class Router {
 				gameInstance = GameLogic.calculateOutcome(gameInstance)
 			}
 
-			gameInstance.save()
+			try {
+				gameInstance.save()
+			}
+			catch (err) {
+				setTimeout(gameInstance => gameInstance.save(), 500)
+			}
+
 			for (let playerState of gameInstance.state.gameState) {
 				for (let inGamePokemon of playerState.pokemon) {
 					await inGamePokemon.save()

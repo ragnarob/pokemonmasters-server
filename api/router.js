@@ -47,20 +47,26 @@ module.exports = class Router {
 				gameInstance = GameLogic.calculateOutcome(gameInstance)
 			}
 
+			let successfulSave = false
 			try {
 				gameInstance.save()
+				successfulSave = true
 			}
 			catch (err) {
-				setTimeout(gameInstance => gameInstance.save(), 500)
+				setTimeout((gameInstance, res) => {
+						gameInstance.save()
+						res.json({gameToken: gameInstance.gameToken})
+				}, 500)
 			}
-
 			for (let playerState of gameInstance.state.gameState) {
 				for (let inGamePokemon of playerState.pokemon) {
 					await inGamePokemon.save()
 				}
 			}
-
-			res.json({gameToken: gameInstance.gameToken})
+			
+			if (successfulSave) {
+				res.json({gameToken: gameInstance.gameToken})
+			}
 		}
 		catch (err) {
 			console.log(err)

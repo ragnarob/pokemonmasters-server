@@ -48,16 +48,8 @@ module.exports = class Router {
 			}
 
 			let successfulSave = false
-			try {
-				gameInstance.save()
-				successfulSave = true
-			}
-			catch (err) {
-				setTimeout((gameInstance, res) => {
-						gameInstance.save()
-						res.json({gameToken: gameInstance.gameToken})
-				}, 500)
-			}
+			await this.saveState()
+
 			for (let playerState of gameInstance.state.gameState) {
 				for (let inGamePokemon of playerState.pokemon) {
 					await inGamePokemon.save()
@@ -72,6 +64,27 @@ module.exports = class Router {
 			console.log(err)
 			res.json({error: 'Error updating action'})
 		}
+	}
+
+	async saveState (res, gameInstance) {
+		try {
+			gameInstance.save()
+			res.json({gameToken: gameInstance.gameToken})
+		}
+		catch (err) {
+			await this.wait500ms()
+			gameInstance.save()
+			res.json({gameToken: gameInstance.gameToken})
+		}
+		finally {
+			return
+		}
+	}
+
+	async wait500ms () {
+		return new Promise((resolve, reject) => {
+			setTimeout(function () {resolve(0)}, 500)
+		})
 	}
 
 	async addPlayerToGame (req, res) {

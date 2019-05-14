@@ -135,6 +135,7 @@ module.exports = class Router {
 				let inGamePokemon = new InGamePokemon({
 					name: pokemonData.species,
 					types: pokemonData.types,
+					num: pokemonData.num,
 					baseStats: new Map(Object.entries(pokemonData.baseStats)),
 					stats: new Map(Object.entries(pokemonData.baseStats)),
 					positionInParty: i+1,

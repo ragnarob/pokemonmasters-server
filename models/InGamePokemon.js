@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 let inGamePokemonSchema = new mongoose.Schema({
     name: String,
+    num: Number,
     types: [String],
     baseStats: {type: Map, of: String},
     stats: {type: Map, of: String},
